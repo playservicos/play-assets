@@ -39,6 +39,12 @@
             text-decoration: none;
         }
 
+        @media only screen and (min-width: 600px) {
+            .content-table tr td span {
+                font-size: 18px;
+            }
+        }
+
         @media only screen and (max-width: 600px) {
             .block {
                 display: block !important;
@@ -333,23 +339,23 @@
                                                 <div class="col num12"
                                                     style="min-width: 320px; max-width: 620px; display: table-cell; vertical-align: top; width: 620px;">
                                                     <div style="width:100% !important;display: table;overflow-wrap: break-word; 
-                                        word-wrap: break-word;padding: 0 20px;">
+                                        word-wrap: break-word;padding: 0 16px;">
 
                                                         <div
-                                                            style="width: 100%;background: #F9F8F8;padding: 20px;box-sizing: border-box;">
-                                                            <table width="100%" cellspacing="0"
+                                                            style="width: 100%;background: #F9F8F8;padding: 16px;box-sizing: border-box;">
+                                                            <table class="content-table" width="100%" cellspacing="0"
                                                                 style="max-width: 620px;table-layout: auto;">
                                                                 <tbody>
-                                                                    <tr style="max-width: 500px;">
+                                                                    <tr style="max-width: 620px">
                                                                         <td align="center">
                                                                             <img width="210"
                                                                                 src="https://github.com/playservicos/play-assets/blob/main/images/winner-phone.png?raw=true" />
                                                                         </td>
                                                                     </tr>
-                                                                    <tr style="max-width: 500px;">
-                                                                        <td style="padding-left: 15px;color: #6E6D7A">
-                                                                            <br />
-                                                                            <span style="color: #6E6D7A;font-size:16px">
+                                                                    <tr style="max-width: 620px;">
+                                                                        <td
+                                                                            style="color: #6E6D7A;vertical-align:middle;padding: 20px 0">
+                                                                            <span style="color: #6E6D7A;">
                                                                                 Seu cadastro foi efetuado com sucesso.
                                                                                 Caso ainda não tenha feito, baixe agora
                                                                                 mesmo o app pdv {{dados.nome_praca}} e
@@ -357,35 +363,45 @@
                                                                             </span>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr style="max-width: 500px;">
+                                                                    <tr style="max-width: 620px;">
                                                                         <td align="center"
-                                                                            style="padding: 16px 0;color: #6E6D7A;vertical-align:middle;width:100%">
-                                                                            <img style="margin-right:16px" width="150"
-                                                                                src="https://github.com/playservicos/play-assets/blob/main/images/google-play.png?raw=true" />
-                                                                            <img width="140"
-                                                                                src="https://github.com/playservicos/play-assets/blob/main/images/app-store.png?raw=true" />
+                                                                            style="padding: 20px 0;color: #6E6D7A;vertical-align:middle;width:100%">
+                                                                            {{ if app and app.google_play }}
+                                                                            <a href="{{{ app.google_play }}}">
+                                                                                <img width="150px"
+                                                                                    src="https://github.com/playservicos/play-assets/blob/main/images/google-play.png?raw=true" />
+                                                                            </a>
+                                                                            {{ end}}
+                                                                            {{ if app and app.app_store }}
+                                                                            <a href="{{{ app.app_store }}}">
+                                                                                <img width="140px"
+                                                                                    style="margin-left:16px"
+                                                                                    src="https://github.com/playservicos/play-assets/blob/main/images/app-store.png?raw=true" />
+                                                                            </a>
+                                                                            {{ end}}
                                                                         </td>
                                                                     </tr>
-                                                                    <tr>
+                                                                    <tr style="max-width: 620px;">
                                                                         <td
                                                                             style="padding: 16px 0;color: #6E6D7A;vertical-align:middle;">
-                                                                            <!-- <hr color="#D7D2D2" width="80%" height:"0.5px"/> -->
-                                                                            <span
-                                                                                style="font-weight:600;font-size: 18px">Confira
+                                                                            <h4
+                                                                                style="margin:0;font-weight:600;font-size: 16px">
+                                                                                Confira
                                                                                 abaixo as facilidades que ele oferece a
                                                                                 você:</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
-                                                            <table style="width:100% !important;color: #6E6D7A;">
-                                                                <tr style="max-width: 500px;">
-                                                                    <td style="width:150px;padding-top: 16px;">
-                                                                        <img width="150"
+                                                            <table class="content-table"
+                                                                style="width:100% !important;color: #6E6D7A;">
+                                                                <tr style="max-width: 620px;">
+                                                                    <td style="padding-top: 16px;">
+                                                                        <img width="130"
                                                                             src="https://github.com/playservicos/play-assets/blob/main/images/extrato.png?raw=true" />
                                                                     </td>
                                                                     <td
-                                                                        style="padding-bottom:16px;padding-left:16px;width:100%;vertical-align: middle;">
+                                                                        style="padding-left:16px;width:100%;vertical-align: middle;">
                                                                         <span>
                                                                             Acompanhe o extrato de seus ganhos e
                                                                             movimentações
@@ -393,32 +409,33 @@
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                            <table style="width:100% !important;color: #6E6D7A;">
-                                                                <tr style="max-width: 500px;">
+                                                            <table class="content-table"
+                                                                style="width:100% !important;color: #6E6D7A;">
+                                                                <tr style="max-width: 620px;">
                                                                     <td
-                                                                        style="padding-bottom:16px;padding-left:16px;width:100%;vertical-align: middle;">
+                                                                        style="vertical-align: middle;padding: 20px 0;padding-right:16px;">
                                                                         <span>
                                                                             Compartilhe seu link de indicação. A cada
                                                                             venda da pessoa indicada, você também ganha
                                                                         </span>
                                                                     </td>
-                                                                    <td style="width:150px;padding-top: 16px;">
-                                                                        <img width="150"
+                                                                    <td style="width:130px;padding: 20px 0">
+                                                                        <img width="130"
                                                                             src="https://github.com/playservicos/play-assets/blob/main/images/midias-sociais.png?raw=true" />
                                                                     </td>
                                                                 </tr>
                                                             </table>
-                                                            <table style="width:100% !important;color: #6E6D7A;">
-                                                                <tr style="max-width: 500px;">
-                                                                    <td style="width:150px;padding-top: 16px;">
-                                                                        <img width="150"
+                                                            <table class="content-table"
+                                                                style="width:100% !important;color: #6E6D7A;">
+                                                                <tr style="max-width: 620px;">
+                                                                    <td style="width:130px;padding-top: 16px;">
+                                                                        <img width="130"
                                                                             src="https://github.com/playservicos/play-assets/blob/main/images/dinheiro.png?raw=true" />
                                                                     </td>
                                                                     <td
-                                                                        style="padding-bottom:16px;padding-left:16px;width:100%;vertical-align: middle;">
+                                                                        style="padding-left:16px;vertical-align: middle;">
                                                                         <span>
-                                                                            Compartilhe seu link de indicação. A cada
-                                                                            venda da pessoa indicada, você também ganha
+                                                                            Acumule seus ganhos e efetue seu saque
                                                                         </span>
                                                                     </td>
                                                                 </tr>
@@ -444,80 +461,31 @@
                                             style="min-width: 320px; max-width: 620px; display: table-cell; vertical-align: top; width: 620px;">
                                             <div style="width:100% !important;">
                                                 <div
-                                                    style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
+                                                    style="background:#2D8DB5;border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-bottom:0px; padding-right: 0px; padding-left: 0px;">
                                                     <div class="col num4"
                                                         style="max-width: 100%; min-width: 206px; display: table-cell; vertical-align: top; width: 100%;">
-                                                        <div style="width:100% !important;">
-                                                            <div
-                                                                style="margin-top:5px;border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
-                                                                {{ if app and app.google_play}}
-
-                                                                <div class="img-container center autowidth"
-                                                                    style="padding-right: 0px;padding-left: 0px;">
-                                                                    <div align="center"
-                                                                        style="color:#71777D;margin-bottom:10px;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:15px;padding-right:10px;padding-bottom:0px;padding-left:10px;">
-                                                                        Baixe agora o seu app na loja de aplicativos e
-                                                                        começe a faturar!<br>
-                                                                    </div>
-                                                                    <a href="{{{ app.google_play }}}">
-                                                                        <img align="center" alt="Image" border="0"
-                                                                            class="center autowidth"
-                                                                            src="https://github.com/playservicos/play-assets/blob/main/images/logo-google-play-black.png?raw=true"
-                                                                            style="margin: 0 auto; text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height:
-                                                                                                    auto; width: 100%; max-width: 206px; display: block;"
-                                                                            title="Baixe nosso aplicativo"
-                                                                            width="206" />
-                                                                    </a>
-                                                                </div>
-                                                                {{ if pedido.texto_rodape }}
-                                                                <p
-                                                                    style="color:#555460;font-size:10px; text-align: justify;padding: 0 25px">
-                                                                    {{pedido.texto_rodape}}
-                                                                </p>
-                                                                {{ end }}
-                                                                {{ end }}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="background-color:transparent;">
-                                <div class="block-grid"
-                                    style="Margin: 0 auto; min-width: 320px; max-width: 620px; overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; ">
-                                    <div style="border-collapse: collapse;display: table;width: 100%;">
-
-                                        <div class="col num12"
-                                            style="min-width: 320px; max-width: 620px; display: table-cell; vertical-align: top; width: 620px;">
-                                            <div style="width:100% !important;">
-
-                                                <div
-                                                    style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-right: 0px; padding-left: 0px;">
-
-                                                    <div
-                                                        style="color:#555555;font-family:Roboto, Tahoma, Verdana, Segoe, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
-                                                        <div
-                                                            style="font-size: 12px; line-height: 1.2; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; color: #555555; mso-line-height-alt: 14px;">
+                                                        <div style="width:100% !important;padding: 16px 0">
+                                                            {{ if not pedido.texto_rodape }}
                                                             <p
-                                                                style="font-size: 12px; line-height: 1.2; text-align: center; word-break: break-word; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px; margin: 0;">
-                                                                <span style="font-size: 12px;color:#71777D">Copyright
-                                                                    &copy;
-                                                                    2020
-                                                                    PlayServi&ccedil;os.
-                                                                    <br>All rights
-                                                                    reserved.</span>
+                                                                style="color:white;font-size:10px; text-align: justify;padding: 0 16px;padding-bottom:20px">
+                                                                {{pedido.texto_rodape}}
                                                             </p>
+                                                            {{ end }}
                                                             <p
-                                                                style="font-size: 12px; line-height: 1.2; text-align: center; word-break: break-word; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px; margin: 0;">
-                                                                <span style="font-size: 12px;"><a
-                                                                        href="mailto:contato@playservicos.com.br"
-                                                                        rel="noopener noreferrer"
-                                                                        style="text-decoration: underline; color: #71777D;"
-                                                                        target="_blank">contato@playservicos.com.br</a></span>
+                                                                style="color:white;padding-bottom:16px;font-size: 14px; line-height: 1.2; text-align: center; word-break: break-word; font-family: Roboto, Tahoma, Verdana, Segoe, sans-serif; mso-line-height-alt: 14px; margin: 0;">
+                                                                Copyright
+                                                                &copy;
+                                                                2020
+                                                                PlayServi&ccedil;os.
+                                                                <br>All rights
+                                                                reserved.
                                                             </p>
+                                                            <a href="mailto:contato@playservicos.com.br"
+                                                                rel="noopener noreferrer"
+                                                                style="text-decoration: underline; color: white;font-size:14px;"
+                                                                target="_blank">
+                                                                contato@playservicos.com.br
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
